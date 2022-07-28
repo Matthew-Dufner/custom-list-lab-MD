@@ -13,6 +13,13 @@ public class CustomLinkedList<E> implements CustomList<E> {
         //implement this method
         //When we add an element to the list, we need to traverse the current list until we get to the end,
         //and then we need to set the next ref on the final node to point to the new final node.
+        Node<E> cursor = head;
+        Node<E> prev = null;
+        while(cursor.next != null){
+            cursor = cursor.next;
+        }
+        cursor.next = new Node<E>();
+        cursor.next.obj = e;
     }
 
     //This one is optional as we removed it from the interface
